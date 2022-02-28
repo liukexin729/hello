@@ -1,0 +1,45 @@
+server:
+  port: 8761
+
+#每天的11:25触发
+schedules:
+  0 25 11 * * ?
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/bbpay?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456
+
+upload:
+  upload-Path: C:/upload/
+  image-Path: /static/upload/
+  staticAccessPath: /upload/**
+  domain-name: 127.0.0.1:8080
+  uploadFolder: /upload/
+  width: 2000
+  height: 1000
+  size: 1048576
+sftp:
+  hostname: 172.31.0.3
+  port: 22
+  username: lkx
+  password: 123456
+  timeout: 1000
+  remoteRootPath: /home/lkx/img
+sftp1:
+  hostname: 25.19.118.3
+  port: 16022
+  username: root
+  password: abcde@123
+  timeout: 1000
+  remoteRootPath: /usr/local/nginx/html/h5/static/images/banner/quickBanner/
+  remotestaticAccessPath: https://epayment.ebchinatech.com/h5/static/images/banner/quickBanner/
+
+##mybatis plus 设置
+#mybatis-plus:
+#  #mapper映射文件  1.mybatis plus 使用*  2.pom.xml文件配制<resources>  3.Mapper和.xml名要相同
+#  mapper-locations: classpath*:com/example/hello/mapper/*Mapper.xml
+#  #实体类所在的包
+#  typeAliasesPackage: com.example.hello.entity.MswebBanner

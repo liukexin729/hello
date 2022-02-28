@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.hello.mapper.BannerMapper">
+    <select id="getAll" resultType="com.example.hello.entity.MswebBanner">
+        SELECT
+        o.banner_id bannerId,
+        o.banner_name bannerName,
+        o.banner_url_web bannerUrlWeb,
+        o.banner_url_yaoyao bannerUrlYaoyao,
+        o.available available,
+        o.sort,
+        o.banner_start_time bannerStartTime,
+        o.banner_target_url bannerTargetUrl
+        FROM
+        bb_msweb_banner o
+    </select>
+
+    <select id="getBannerById" resultType="com.example.hello.entity.MswebBanner" parameterType="java.lang.Integer">
+        SELECT
+        o.banner_id bannerId,
+        o.banner_name bannerName,
+        o.banner_url_web bannerUrlWeb,
+        o.banner_url_yaoyao bannerUrlYaoyao,
+        o.available available,
+        o.sort,
+        o.banner_start_time bannerStartTime,
+        o.banner_target_url bannerTargetUrl
+        FROM
+        bb_msweb_banner o
+        where banner_id = #{bannerId}
+    </select>
+
+    <update id="updateBanner" parameterType="com.example.hello.entity.MswebBanner" >
+        UPDATE bb_msweb_banner o
+    </update>
+
+
+
+</mapper>
