@@ -21,11 +21,4 @@ public class HelloController {
         return str+" "+"World!";
     }
 
-    @RequestMapping(value = "/hello2")
-    public String hello2(String str) {
-
-        LOGGER.info("接收的参数:{}",str);
-
-        return str+" "+"World!";
-    }
 }
